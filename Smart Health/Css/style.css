@@ -1,0 +1,122 @@
+:root {
+    --ink: #1b2a29;
+    --muted: #566866;
+    --line: #c3cfcc;
+    --brand: #0e5a56;
+    --brand-dark: #0a4743;
+    --bad: #a1261b;
+    --bad-bg: #f9dedb;
+    --good: #1c6a42;
+    --bg: #f4f7f6;
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+* { margin: 0; }
+[hidden] { display: none !important; }
+
+body {
+    font-family: 'IBM Plex Sans Arabic', Tahoma, Arial, sans-serif;
+    font-size: 15px;
+    line-height: 1.65;
+    color: var(--ink);
+    background: var(--bg);
+}
+
+button, input { font: inherit; color: inherit; }
+:focus-visible { outline: 2px solid var(--brand); outline-offset: 2px; }
+
+.page {
+    min-height: 100vh;
+    display: grid;
+    grid-template-columns: minmax(0, 5fr) minmax(0, 4fr);
+}
+
+/* اللوحة الجانبية: نمط علامات الصليب الطبي */
+.brand-panel {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 44px 52px;
+    color: #e6f1ef;
+    background-color: #0d3532;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='56' height='56'%3E%3Cpath fill='%23fff' fill-opacity='.06' d='M26 18h4v8h8v4h-8v8h-4v-8h-8v-4h8z'/%3E%3C/svg%3E");
+}
+
+.brand { display: flex; align-items: center; gap: 15px; font-size: 20px; font-weight: 600; color: #fff; }
+
+.brand-copy h1 {
+    font-size: 34px;
+    font-weight: 600;
+    line-height: 1.4;
+    max-width: 14em;
+    margin-bottom: 14px;
+}
+.brand-copy p { max-width: 30em; font-size: 16px; opacity: .85;  }
+
+/* نموذج الدخول */
+.form-panel {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 40px 28px;
+}
+form { width: min(380px, 100%); }
+form h2 { font-size: 26px; font-weight: 600; line-height: 1.4; }
+.lead { color: var(--muted); margin: 4px 0 28px; }
+
+.field { margin-bottom: 18px; }
+.field label { display: block; margin-bottom: 6px; font-size: 14px; font-weight: 500; }
+
+input[type="email"], input[type="password"], input[type="text"] {
+    width: 100%;
+    height: 46px;
+    padding: 0 14px;
+    background: #fff;
+    border: 1px solid var(--line);
+    border-radius: 6px;
+}
+input:focus { outline: 2px solid var(--brand); outline-offset: 0; border-color: var(--brand); }
+input[aria-invalid] { border-color: var(--bad); }
+
+.pw { position: relative; }
+.pw input { padding-inline-end: 72px; }
+.pw button {
+    position: absolute; inset-block: 0; inset-inline-end: 0;
+    padding: 0 14px; background: none; border: 0;
+    color: var(--brand); font-size: 14px; font-weight: 500; cursor: pointer;
+}
+.pw button:hover { text-decoration: underline; }
+
+.check {
+    display: flex; align-items: center; gap: 8px;
+    margin: 4px 0 22px; font-size: 14px; color: var(--muted); cursor: pointer;
+}
+.check input { width: 17px; height: 17px; accent-color: var(--brand); }
+
+.submit {
+    width: 100%; height: 46px;
+    background: var(--brand); color: #fff;
+    border: 0; border-radius: 6px;
+    font-size: 16px; font-weight: 600; cursor: pointer;
+}
+.submit:hover { background: var(--brand-dark); }
+.submit:disabled { opacity: .55; cursor: not-allowed; }
+
+#message { min-height: 24px; margin-top: 16px; font-size: 14px; }
+#message.error { color: var(--bad); background: var(--bad-bg); padding: 8px 12px; border-radius: 6px; }
+#message.ok { color: var(--good); }
+
+.demo {
+    margin-top: 24px; padding-top: 16px;
+    border-top: 1px solid var(--line);
+    font-size: 13px; color: var(--muted);
+}
+
+@media (max-width: 800px) {
+    .page { grid-template-columns: 1fr; grid-template-rows: auto 1fr; }
+    .brand-panel { padding: 20px 24px; }
+    .brand-copy { display: none; }
+    .form-panel { align-items: flex-start; padding-top: 32px; }
+}
+
+

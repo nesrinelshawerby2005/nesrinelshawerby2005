@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Smart Health</title>
+
+    <!-- حماية الصفحة وتطبيق المظهر قبل الرسم لتجنب الوميض -->
+    <script>
+        (function () {
+            try {
+                var s = sessionStorage.getItem('sh_session') || localStorage.getItem('sh_session');
+                if (!s) { location.replace('index.html'); return; }
+                var p = JSON.parse(localStorage.getItem('sh_prefs') || '{}');
+                if (p.theme && p.theme !== 'auto') document.documentElement.setAttribute('data-theme', p.theme);
+            } catch (e) { /* تجاهل */ }
+        })();
+    </script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./cs/style.css">
+</head>
+<body>
+
+<a class="skip" href="#main">انتقل إلى المحتوى</a>
+
+<div class="app">
+
+    <aside class="sidebar" id="sidebar" aria-label="القائمة الرئيسية">
+        <div class="brand">
+            <svg width="30" height="30" viewBox="0 0 30 30" aria-hidden="true">
+                <rect width="30" height="30" rx="7" fill="#e6f1ef"/>
+                <path d="M12.5 6h5v6.5H24v5h-6.5V24h-5v-6.5H6v-5h6.5z" fill="#0d3532"/>
+            </svg>
+            <div>
+                <strong>Smart Health</strong>
+                <span>نظام المعلومات الصحي الذكي</span>
+            </div>
+        </div>
+
+        <nav id="nav" aria-label="أقسام النظام"></nav>
+
+        <div class="side-foot">
+            <div class="who">
+                <strong id="userName"></strong>
+                <span id="userRole"></span>
+            </div>
+            <button type="button" id="logoutBtn" class="btn-side">تسجيل الخروج</button>
+        </div>
+    </aside>
+
+    <div class="scrim" id="scrim" hidden></div>
+
+    <div class="main-col">
+        <header class="topbar">
+            <button type="button" id="menuBtn" class="menu-btn" aria-label="القائمة" aria-expanded="false" aria-controls="sidebar">
+                <svg width="20" height="20" viewBox="0 0 20 20" aria-hidden="true"><path d="M3 5h14M3 10h14M3 15h14" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+            </button>
+            <span class="today" id="today"></span>
+            <div class="top-actions">
+                <button type="button" id="searchBtn" class="btn btn-quiet">بحث في كل السجلات <kbd>/</kbd></button>
+                <a href="#notifications" class="btn btn-quiet">الإشعارات <span class="count" id="bellCount" hidden></span></a>
+            </div>
+        </header>
+
+        <main id="main"></main>
+    </div>
+</div>
+
+<!-- نموذج الإضافة والتعديل -->
+<dialog id="formDialog" class="dialog" aria-labelledby="formTitle">
+    <form id="recordForm" novalidate>
+        <div class="dialog-head">
+            <h2 id="formTitle"></h2>
+            <button type="button" class="x" data-close aria-label="إغلاق">&times;</button>
+        </div>
+        <div class="dialog-body fields" id="formFields"></div>
+        <div class="dialog-foot">
+            <button type="button" class="btn" data-close>إلغاء</button>
+            <button type="submit" class="btn btn-primary" id="formSubmit">حفظ</button>
+        </div>
+    </form>
+</dialog>
+
+<!-- تأكيد الإجراءات الخطرة -->
+<dialog id="confirmDialog" class="dialog dialog-sm" aria-labelledby="confirmTitle">
+    <form method="dialog">
+        <div class="dialog-body">
+            <h2 id="confirmTitle"></h2>
+            <p id="confirmText" class="muted"></p>
+        </div>
+        <div class="dialog-foot">
+            <button type="submit" class="btn" value="cancel">إلغاء</button>
+            <button type="submit" class="btn btn-primary" id="confirmOk" value="ok">تأكيد</button>
+        </div>
+    </form>
+</dialog>
+
+<!-- البحث الشامل -->
+<dialog id="searchDialog" class="dialog dialog-search" aria-label="بحث في كل السجلات">
+    <div class="search-top">
+        <label class="sr-only" for="searchInput">ابحث في كل السجلات</label>
+        <input id="searchInput" type="search" placeholder="اسم مريض، طبيب، رقم هاتف، كود..." autocomplete="off">
+    </div>
+    <div id="searchResults" class="search-results"></div>
+</dialog>
+
+<div id="toasts" class="toasts" role="status" aria-live="polite"></div>
+
+<script src="./script/script.js"></script>
+<script src="./main.js/data.js"></script>
+
+</body>
+</html>

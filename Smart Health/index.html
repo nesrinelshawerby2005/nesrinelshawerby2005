@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>تسجيل الدخول | Smart Health</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./Css/style.css">
+</head>
+<body>
+
+<div class="page">
+
+    <aside class="brand-panel">
+        <div class="brand">
+            <svg width="34" height="34" viewBox="0 0 30 30" aria-hidden="true">
+                <rect width="30" height="30" rx="7" fill="#e6f1ef"/>
+                <path d="M12.5 6h5v6.5H24v5h-6.5V24h-5v-6.5H6v-5h6.5z" fill="#0d3532"/>
+            </svg>
+            <span>Smart Health</span>
+        </div>
+        <div class="brand-copy">
+            <h1>نظام المعلومات الصحي الذكي</h1>
+            <p>متابعة المرضى والمواعيد والمخزون الطبي للوحدات الصحية من مكان واحد.</p>
+        </div>
+    </aside>
+
+    <main class="form-panel">
+        <form id="loginForm" novalidate>
+            <h2>تسجيل الدخول</h2>
+            <p class="lead">أدخل بيانات حسابك لمتابعة العمل.</p>
+
+            <div class="field">
+                <label for="email">البريد الإلكتروني</label>
+                <input id="email" type="email" dir="ltr" autocomplete="username" required>
+            </div>
+
+            <div class="field">
+                <label for="password">كلمة المرور</label>
+                <div class="pw">
+                    <input id="password" type="password" dir="ltr" autocomplete="current-password" required>
+                    <button type="button" id="togglePw" aria-pressed="false">إظهار</button>
+                </div>
+            </div>
+
+            <label class="check">
+                <input type="checkbox" id="remember">
+                تذكرني على هذا الجهاز
+            </label>
+
+            <button type="submit" class="submit" id="submitBtn">دخول</button>
+
+            <p id="message" role="alert"></p>
+
+        </form>
+    </main>
+
+</div>
+
+<script src="./js/main.js"></script>
+</body>
+</html>
