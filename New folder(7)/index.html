@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>E-Tech</title>
+    <link rel="stylesheet" href="./bootstrap.min.css">
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+    
+
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-black">
+  <div class="container">
+
+   <button onclick="toggleMode()" id="modeBtn">🌙</button>
+    <a class="navbar-brand fw-bold" href="#E-Teach ">E-Teach</a>
+
+    
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+   
+    <div class="collapse navbar-collapse" id="navMenu">
+     <ul class="navbar-nav ms-auto">
+  <li class="nav-item">
+    <a class="nav-link active" href="#Home">Home</a>
+  </li>
+
+  <li class="nav-item">
+    <a class="nav-link" href="#Services">Services</a>
+  </li>
+    <li class="nav-item">
+        <a class="nav-link" href="#About">About</a>
+  <li class="nav-item">
+    <a class="nav-link" href="#Contact">Contact</a>
+    
+  </li>
+  <button id="loginBtn">Login</button>
+<span id="userName" style="margin-left:10px;"></span>
+</ul>
+
+    </div>
+
+  </div>
+</nav>
+
+
+
+
+<div class="content">
+
+<h1>Welcome to E-Teach</h1>
+
+<p>Your gateway to online learning!</p>
+<a href="#Courses" class="btn btn-primary">Buy Now</a>
+<button class="btn btn-secondary">Contact Us</button>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ <section id="Services" class="container mt-5">
+
+  <h2 class="text-center text-white mb-4">Our Services</h2>
+
+  <div class="row g-4">
+
+
+
+<div id="loading" class="row g-4">
+
+    <!-- Card 1 -->
+    <div class="col-md-4">
+      <div class="card text-center p-3 shadow border-0">
+
+        <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="currentColor" class="mb-3 text-primary" viewBox="0 0 16 16">
+          <path d="M8.211 2.047a.5.5 0 0 0-.422 0l-7.5 3.5a.5.5 0 0 0 .025.917l7.5 3a.5.5 0 0 0 .372 0L14 7.14V13a1 1 0 0 0-1 1v2h3v-2a1 1 0 0 0-1-1V6.739l.686-.275a.5.5 0 0 0 .025-.917z"/>
+        </svg>
+
+        <h5>Education</h5>
+        <p>Learn modern skills easily.</p>
+
+        <a href="./details.html" class="btn btn-primary btn-sm">Visit Now</a>
+        
+
+      </div>
+    </div>
+
+    <!-- Card 2 -->
+    <div class="col-md-4">
+      <div class="card text-center p-3 shadow border-0">
+
+        <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="currentColor" class="mb-3 text-primary" viewBox="0 0 16 16">
+          <path d="M0 4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2zm2-1a1 1 0 0 0-1 1v1h14V4a1 1 0 0 0-1-1z"/>
+        </svg>
+
+        <h5>Web Development</h5>
+        <p>Build responsive websites.</p>
+
+        <a href="./course.html" class="btn btn-primary btn-sm">Visit Now</a>
+         
+      </div>
+    </div>
+    
+
+    <!-- Card 3 -->
+    <div class="col-md-4">
+      <div class="card text-center p-3 shadow border-0">
+
+        <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="currentColor" class="mb-3 text-primary" viewBox="0 0 16 16">
+          <path d="M8 0a5 5 0 0 0-5 5v3H2v6h12V8h-1V5a5 5 0 0 0-5-5z"/>
+        </svg>
+
+        <h5>AI Solutions</h5>
+        <p>Start learning Artificial Intelligence.</p>
+
+        <a href="./date.html" class="btn btn-primary btn-sm">Visit Now</a>
+
+      </div>
+    </div>
+
+  </div>
+
+</section>
+
+
+
+
+<section id="About" class="about-section container mt-5">
+
+  <div class="text-center mb-4">
+    <h2 class="text-white">About Us</h2>
+    <p class="text-light">Who we are and what we do</p>
+  </div>
+
+  <div class="row align-items-center">
+
+    <!-- Text -->
+    <div class="col-md-6 text-light">
+      <h3>Welcome to E-Teach</h3>
+      <p>
+        E-Teach is an online learning platform that helps students
+        gain real skills in programming, design, and technology.
+        We focus on practical learning with simple explanations.
+      </p>
+
+      <p>
+        Our mission is to make education easier, faster, and accessible for everyone.
+      </p>
+
+      <a href="#Courses" class="btn btn-primary btn-explore">Explore Courses</a>
+    </div>
+
+   
+
+</section>
+
+
+<section id="Contact" class="container mt-5">
+
+  <div class="text-center mb-4">
+    <h2 class="text-white">Contact Us</h2>
+    <p class="text-light">We’d love to hear from you</p>
+  </div>
+
+  <div class="row justify-content-center">
+
+    <div class="col-md-8">
+
+      <div class="contact-box p-4 rounded">
+
+        <form>
+
+          <div class="mb-3">
+            <label class="form-label text-light">Name</label>
+            <input type="text" class="form-control" placeholder="Enter your name">
+          </div>
+
+          <div class="mb-3">
+            <label class="form-label text-light">Email</label>
+            <input type="email" class="form-control" placeholder="Enter your email">
+          </div>
+
+          <div class="mb-3">
+            <label class="form-label text-light">Message</label>
+            <textarea class="form-control" rows="4" placeholder="Write your message"></textarea>
+          </div>
+
+          <button type="button" class="btn btn-primary w-100" id="sendBtn">Send Message</button>
+  <div id="topMessage" class="text-center mb-3"></div>
+
+  
+        </form>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+
+
+<footer class="text-center text-light mt-5 p-3" style="background:#000;">
+  © 2026 E-Teach | All Rights Reserved
+</footer>
+
+
+
+
+
+
+
+
+<script src="./bootstrap.bundle.min.js"></script>
+<script src="./main.js"></script>
+
+</body>
+</html>

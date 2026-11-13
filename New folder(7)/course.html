@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+<meta charset="UTF-8">
+<title>تفاصيل الكورس</title>
+
+<style>
+body {
+    margin: 0;
+    font-family: Arial;
+    background: #1e1e2f;
+    color: white;
+}
+
+/* container */
+.container {
+    width: 90%;
+    max-width: 1000px;
+    margin: 50px auto;
+}
+
+/* title */
+h1 {
+    text-align: center;
+}
+
+/* image */
+.image img {
+    width: 100%;
+    border-radius: 15px;
+    transition: 0.5s;
+}
+
+.image img:hover {
+    transform: scale(1.05);
+}
+
+/* tabs */
+.tabs {
+    display: flex;
+    margin-top: 20px;
+    cursor: pointer;
+}
+
+.tab {
+    flex: 1;
+    padding: 15px;
+    text-align: center;
+    background: #2c2c54;
+    margin: 5px;
+    border-radius: 10px;
+    transition: 0.3s;
+}
+
+.tab:hover {
+    background: #00ffcc;
+    color: black;
+}
+
+.tab.active {
+    background: #00ffcc;
+    color: black;
+}
+
+/* content */
+.content {
+    background: #2c2c54;
+    padding: 20px;
+    border-radius: 15px;
+    margin-top: 10px;
+    animation: fade 0.5s;
+}
+
+@keyframes fade {
+    from {opacity: 0;}
+    to {opacity: 1;}
+}
+
+/* price */
+.price {
+    font-size: 25px;
+    margin-top: 20px;
+    color: #00ffcc;
+}
+
+/* reviews */
+.review {
+    background: #1e1e2f;
+    padding: 10px;
+    margin: 10px 0;
+    border-radius: 10px;
+}
+
+/* sticky button */
+.buy-btn {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: #00ffcc;
+    color: black;
+    padding: 15px 25px;
+    border-radius: 50px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.buy-btn:hover {
+    transform: scale(1.1);
+    background: #00ccaa;
+}
+</style>
+
+</head>
+<body>
+
+<div class="container">
+
+    <h1>كورس Front-End Development</h1>
+
+   
+
+    <!-- Tabs -->
+    <div class="tabs">
+        <div class="tab active" onclick="showTab('overview', this)">الوصف</div>
+        <div class="tab" onclick="showTab('content', this)">المحتوى</div>
+        <div class="tab" onclick="showTab('reviews', this)">التقييمات</div>
+    </div>
+
+    <!-- Content -->
+    <div id="overview" class="content">
+        هذا الكورس مخصص لتعليم تطوير الواجهات الأمامية (Front-End Development) باستخدام أحدث التقنيات مثل HTML, CSS, JavaScript, React, Node.js وغيرها. ستتعلم كيفية بناء مواقع وتطبيقات ويب تفاعلية وجذابة من الصفر حتى الاحتراف.
+    </div>
+
+    <div id="content" class="content" style="display:none;">
+        ✔️ HTML Basics <br>
+        ✔️ CSS Layout <br>
+        ✔️ JavaScript <br>
+        ✔️ React <br>
+        ✔️ Node.js <br>
+        ✔️ MongoDB <br>
+        ✔️ Express.js <br>
+        🔒 project final
+
+    </div>
+
+    <div id="reviews" class="content" style="display:none;">
+        <div class="review">⭐⭐⭐⭐⭐ - كورس ممتاز جدا</div>
+        <div class="review">⭐⭐⭐⭐ - شرح بسيط وسهل</div>
+    </div>
+
+    <div class="price">9000 جنيه</div>
+
+</div>
+
+<!-- Sticky Button -->
+<div class="buy-btn" onclick="bookNow(this)">احجز الآن</div>
+
+
+<script>
+function showTab(id, el) {
+    let contents = document.querySelectorAll(".content");
+    contents.forEach(c => c.style.display = "none");
+
+    document.getElementById(id).style.display = "block";
+
+    let tabs = document.querySelectorAll(".tab");
+    tabs.forEach(t => t.classList.remove("active"));
+
+    el.classList.add("active");
+}
+
+/* الحجز */
+function bookNow(btn) {
+    btn.innerHTML = "تم الحجز ✅";
+    btn.style.background = "#4CAF50";
+    btn.style.color = "white";
+    btn.style.cursor = "default";
+    btn.onclick = null; // يمنع الضغط تاني
+}
+</script>
+
+
+
+
+
+
+</body>
+</html>
