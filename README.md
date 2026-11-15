@@ -1,40 +1,16 @@
-👋 Hey, I'm Nesrin Elshawerby
+# React + Vite
 
-💻 Front-End Developer
+This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
+Currently, two official plugins are available:
 
-<hr>
-🧠 About Me
+- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
+- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
 
-- 💻 Front-End Developer passionate about building modern and user-friendly websites
-- ⚛️ Building web applications using React.js
-- 🎨 Creating responsive designs using HTML, CSS and JavaScript
-- 🧩 Using Bootstrap and Tailwind CSS
-- 🚀 Always learning and improving my skills
-<hr>
-🛠️ Skills
+## React Compiler
 
-- HTML5
-- CSS3
-- JavaScript
-- React.js
-- Bootstrap
-- Tailwind CSS
-  - GitHub
-  - Next.js
- <hr>
-📂 Projects
+The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
 
-- 🛒 E-commerce Websites
-- ⚛️ React.js Applications
-- 💻 Responsive Web Projects
-<hr>
-📫 Contact Me
+## Expanding the ESLint configuration
 
-📧 Email: nesrinelshawerby2005@gmail.com
-
-💼 LinkedIn: https://www.linkedin.com/in/nesrin-elshawerby
-
-🐙 GitHub:https://github.com/nesrinelshawerby2005
-
-
+If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
